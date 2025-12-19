@@ -10,9 +10,9 @@ import TitleUpdater from './exercises/titleUpdater.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-    <Message name='Seppo'/>
+    {/* <Message name='Seppo'/>
     <ToggleButton />
     <NameForm />
-    <TitleUpdater />
+    <TitleUpdater /> */}
   </StrictMode>,
 )
