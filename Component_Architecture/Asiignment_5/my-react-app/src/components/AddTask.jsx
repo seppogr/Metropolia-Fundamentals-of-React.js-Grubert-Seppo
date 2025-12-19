@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from '../styles/AddTask.module.css';
 
 function AddTask () {
     const [submittedTask, setSubmittedTask] = useState([])
@@ -53,34 +54,39 @@ const completeTask = (index) => {
 }
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form className={styles.inputform} onSubmit={handleSubmit}>
                 <label>
-                    task:
+                    Task:
                     <input type="text"
                         value={task.todo}
                         onChange={handleChange} />
                 </label>
+                <button className={styles.abutton} onClick={() => handleSubmit}>Add task</button>
 
-                <input type="submit" />
             </form>
 
 
-            <div>
+            <div className={styles.tasklist}>
+                <p className={styles.listheading}>Your current list of tasks:</p>
+                <ul>
                 {submittedTask.map((s, index) => (
-                    <div key={index}>
-                        {s.todo}
-                        {s.completed ? ' task completed ' : ' task not completd '}
+                    <div key={index} className={styles.table}>
+                        <li>
 
+                            {s.todo}
+                            {s.completed ? ' (task completed) ' : ' (task not completed) '}
                             <label>
-                                <input type="checkbox"
-                                checked={s.completed}
+
+                                <input type="checkbox" className={styles.cb}
+                                    checked={s.completed}
                                     onChange={() => completeTask(index)}
                                 />
                             </label>
-
-                        <button onClick={() => removeTask(index)}>Remove</button>
+                            <button class={styles.rbutton} onClick={() => removeTask(index)}>Remove</button>
+                        </li>
                     </div>
                 ))}
+                </ul>
             </div>
 
         </>
