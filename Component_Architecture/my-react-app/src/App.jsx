@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import './App.css'
 import ReadState from './exercises/loginMessage';
+import Parenting from './exercises/incrementButton';
+import StyledBox from './exercises/BoxStyle';
 
 function App() {
     return (
       <>
         <ReadState />
         <Parent />
+        <Parenting />
+        <StyledBox />
       </>
 
   );
