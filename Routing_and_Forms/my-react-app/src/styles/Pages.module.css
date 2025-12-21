@@ -1,0 +1,34 @@
+.home {
+    padding: 20px;
+    background: #ffc300;
+    border-radius: 8px;
+    width: 350px;
+    height: 250px;
+}
+
+.about {
+    padding: 20px;
+    background: #c9980b;
+    border-radius: 8px;
+    width: 350px;
+    height: 250px;
+}
+
+.contact {
+    padding: 20px;
+    background: #b6913cff;
+    border-radius: 8px;
+    width: 350px;
+    height: 250px;
+}
+
+.navbar {
+    background: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 350px;
+}
+
+a:hover {
+    color: red;
+}

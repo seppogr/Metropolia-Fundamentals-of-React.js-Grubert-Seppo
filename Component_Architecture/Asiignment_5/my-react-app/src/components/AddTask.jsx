@@ -70,8 +70,8 @@ const completeTask = (index) => {
                 <p className={styles.listheading}>Your current list of tasks:</p>
                 <ul>
                 {submittedTask.map((s, index) => (
-                    <div key={index} className={styles.table}>
-                        <li>
+                    <div className={styles.table}>
+                        <li key={index}>
 
                             {s.todo}
                             {s.completed ? ' (task completed) ' : ' (task not completed) '}
