@@ -5,7 +5,7 @@ function Home() {
     return (
         <div className={styles.home}>
             <h2>Home</h2>
-            <p>Welcome to Seppo Grubert's homepage!</p>
+            <p>Welcome to Seppo Grubert's homepage!<br /> This is an assignment on how to build a three-page web page using React.</p>
         </div>
     );
 }
@@ -13,8 +13,13 @@ function Home() {
 function About() {
     return (
         <div className={styles.about}>
-            <h2>About Me</h2>
-            <p>I am a student of programming from Tampere, with special interests in team sports such as handball and floorball.</p>
+            <h2>About This Assignment</h2>
+            <p>I started by first following the steps in the course material to create a simple three-page web site. <br />The course
+                material provided very clear instructions on how to do this so I did not need to use additional sources.<br />  What
+                I struggled with a bit was the css because I guess was in a dort of coding mindset which meant I was really happy
+                to be able to get all the routing and such to work.<br /> Designing styling is not really my strong suit so I settled
+                with some basic css.
+            </p>
         </div>
     );
 }
