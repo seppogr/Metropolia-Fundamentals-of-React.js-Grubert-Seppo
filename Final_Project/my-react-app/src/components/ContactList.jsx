@@ -1,4 +1,5 @@
 import styles from '../styles/AddTask.module.css'
+import { BrowserRouter as Link } from 'react-router-dom';
 
 
 function ContactList( {contacts} ) {
@@ -6,13 +7,17 @@ function ContactList( {contacts} ) {
     return (
         <div className={styles.tasklist}>
             <p className={styles.listheading}>Your current list of names:</p>
+
             <ul>
-                {contacts.map((singleContactName, index) => (
-                    <div className={styles.table} key={index}>
-                        <li>
-                            {singleContactName.name} {singleContactName.phone}
-                        </li>
-                    </div>
+                {contacts.map((singleContact) => (
+                    <li className={styles.table} key={singleContact.id}>
+
+                    <Link to={`/contacts/${singleContact.id}`} state={{ contact: singleContact}}>
+
+                           {singleContact.name} {singleContact.phone}
+
+                    </Link>
+                    </li>
                 ))}
             </ul>
         </div>

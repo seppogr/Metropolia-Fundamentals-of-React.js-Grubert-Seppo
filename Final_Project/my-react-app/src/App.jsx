@@ -7,14 +7,11 @@ import AddContact from './components/AddContact';
 import './App.css'
 import { useState } from 'react';
 import InitialContacts from './data/initialContacts';
-
-
+import ContactDetails from './components/ContactDetails';
+import NotFound from './pages/NotFound';
 
 function App() {
   const [contacts, setContacts] = useState(InitialContacts);
-
-
-
 
   const addContact = (contact) => {
     setContacts((prev) =>
@@ -22,18 +19,20 @@ function App() {
     );
   }
 
-
       return (
-
         <>
-
           <Router>
             <Navbar />
             <div style={{ padding: '20px' }}>
               <Routes>
-                <Route path="/" element={<Home  />} />
-                <Route path="/addContact" element={<AddContact addContact={addContact} />} />
-                <Route path="/contactList" element={<ContactList contacts={contacts} />} />
+
+                <Route exact path="/" element={<Home  />} />
+                <Route exact path="/addContact" element={<AddContact addContact={addContact} />} />
+                <Route exact path="/contactList" element={<ContactList contacts={contacts} />} />
+                <Route exact path="/contacts/:id" element={<ContactDetails />} />
+                <Route exact path="*" element={<NotFound />} />
+
+
 
               </Routes>
             </div>

@@ -3,20 +3,29 @@ import styles from '../styles/AddTask.module.css'
 
 
 function AddContact({ addContact }) {
-    const [contact, setContact] = useState({});
+    const [contact, setContact] = useState({
+        id: "",
+        name: "",
+        phone: "",
+        email: "",
+        address: ""
+    });
 
 
     const handleChange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
+        const { name, value } = e.target;
         setContact(values => ({...values, [name] : value}))
-
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addContact(contact);
+
+        const contactToAdd = { ...contact, id: Date.now().toString()}
+        addContact(contactToAdd);
+        alert(`${contactToAdd.name} added to contacts list.`)
+
         setContact({
+            id: "",
             name: "",
             phone: "",
             email: "",
@@ -27,11 +36,18 @@ function AddContact({ addContact }) {
     return (
         <>
             <form className={styles.inputform} onSubmit={handleSubmit}>
+                {/* <label>
+                     id:
+                    <input type="text"
+                        value={contact.id}
+                        name="id"
+                        onChange={handleChange} />
+                </label> */}
                 <label>
                      Name:
                     <input type="text"
                         value={contact.name}
-                        name="firstName"
+                        name="name"
                         onChange={handleChange} />
                 </label>
                 <br />
@@ -39,7 +55,7 @@ function AddContact({ addContact }) {
                     Phone:
                     <input type="text"
                         value={contact.phone}
-                        name="phoneNumber"
+                        name="phone"
                         onChange={handleChange} />
                 </label>
                 <br />
@@ -62,8 +78,6 @@ function AddContact({ addContact }) {
                 <button className={styles.abutton} onClick={() => handleSubmit}>Add contact</button>
             </form>
         </>
-
-
     );
 
 }
