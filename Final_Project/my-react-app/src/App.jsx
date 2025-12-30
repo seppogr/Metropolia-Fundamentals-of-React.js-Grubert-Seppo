@@ -32,8 +32,6 @@ function App() {
                 <Route exact path="/contacts/:id" element={<ContactDetails />} />
                 <Route exact path="*" element={<NotFound />} />
 
-
-
               </Routes>
             </div>
           </Router>
