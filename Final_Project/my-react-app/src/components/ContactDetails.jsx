@@ -1,20 +1,19 @@
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-function ContactDetails () {
+function ContactDetails ({ contacts }) {
 
-    const {state} = useLocation();
-    const con = state.contact;
 
-    return <div>
+    const { id } = useParams();
 
-        <br />
-    {con.name}
+    const con = contacts.find((contact) => String(contact.id) === String(id));
+
+    return <div style={{ width: "325px", color: "white", backgroundColor: "#1f6f45", marginLeft: "auto", marginRight: "auto", borderRadius: "16px", padding: "24px"}}>
+        <h2>{con.name}</h2>
+    Phone: {con.phone}
     <br />
-    {con.phone}
-    <br />
-    {con.email}
+    E-Mail: {con.email}
         <br />
-    {con.address}</div>
+    Address: {con.address}</div>
 }
 
 export default ContactDetails

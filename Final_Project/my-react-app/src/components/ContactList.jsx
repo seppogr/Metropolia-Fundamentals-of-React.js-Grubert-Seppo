@@ -1,26 +1,40 @@
-import styles from '../styles/AddTask.module.css'
-import { BrowserRouter as Link } from 'react-router-dom';
+import styles from '../styles/AddContact.module.css'
+import { Link } from 'react-router-dom';
+
 
 
 function ContactList( {contacts} ) {
 
     return (
-        <div className={styles.tasklist}>
-            <p className={styles.listheading}>Your current list of names:</p>
+        <>
+        <div className={styles.contactslist}>
+            <div className={styles.listheading}><h2>Your List of Contacts:</h2></div>
 
             <ul>
                 {contacts.map((singleContact) => (
                     <li className={styles.table} key={singleContact.id}>
 
-                    <Link to={`/contacts/${singleContact.id}`} state={{ contact: singleContact}}>
+                    <Link to={`/contacts/${singleContact.id}`} >
 
-                           {singleContact.name} {singleContact.phone}
+                           {singleContact.name} <br />Phone: {singleContact.phone}
 
                     </Link>
+                        <Link to={`/edit/${singleContact.id}`}>
+                            <button className={styles.abutton}>Edit</button>
+                    </Link>
+                    <Link to={"/"}>
+                            <button className={styles.abutton}>Delete</button>
+                    </Link>
+
+
                     </li>
+
+
                 ))}
+
             </ul>
         </div>
+        </>
     )
 }
 
