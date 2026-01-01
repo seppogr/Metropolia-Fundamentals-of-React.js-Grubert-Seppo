@@ -4,7 +4,7 @@ function Home() {
         <div style={{ width: "500px", color: "white", backgroundColor: "#1f6f45", marginLeft: "auto", marginRight: "auto", borderRadius: "16px", padding: "24px" }}>
             <h2>Home</h2>
             <p>Welcome to Seppo Grubert's homepage!<br /> This is an assignment on how to build a three-page web page using React.</p>
-            <h3>List of views</h3>
+            <h3>List of Views</h3>
             <ul>
                 <li>
                     1) <span style={{fontWeight :"bold"}}>Home:</span> In this page a home view is rendered. No state or props are used here, and React has very minimal presence here.
@@ -37,14 +37,15 @@ function Home() {
                     just to see that it works similarly in React than in vanilla html.
                 </li>
             </ul>
-            <h3>Other Components</h3>
+            <h3>Other Components/ Functionalities</h3>
             <ul>
                 <li>
-                    7) <span style={{ fontWeight: "bold" }}>Delete Contact:</span>
+                    7) <span style={{ fontWeight: "bold" }}>Delete Contact:</span> Uses array.prototype.filter() to create array of all contacts except the one that is to be deleted.
+                    This new array of objects is set as contacts in app.jsx.
                 </li>
                 <br />
                 <li>
-                    8) <span style={{ fontWeight: "bold" }}>NavBar:</span>
+                    8) <span style={{ fontWeight: "bold" }}>NavBar:</span> Is an element that is rendered in app.jsx. Contains internal site navigation links.
                 </li>
             </ul>
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from '../styles/AddContact.module.css'
+import { useNavigate } from "react-router-dom";
 
 
 function AddContact({ addContact }) {
@@ -11,6 +12,7 @@ function AddContact({ addContact }) {
         address: ""
     });
 
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -30,55 +32,56 @@ function AddContact({ addContact }) {
             email: "",
             address: ""
         });
+        navigate("/contactList");
     }
 
     return (
         <>
             <div style={{ width: "500px", color: "white", backgroundColor: "#1f6f45", marginLeft: "auto", marginRight: "auto", borderRadius: "16px", padding: "24px" }}>
-            <form className={styles.inputform} onSubmit={handleSubmit}>
                 <h2>Enter Your Contact's Details Here:</h2>
-                <label className={styles.field}>
-                        Name:{"\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"}
-                    <input
-                        className={styles.input}
-                        type="text"
-                        value={contact.name}
-                        name="name"
-                        onChange={handleChange} />
-                </label>
-                <br />
-                <label>
-                        Phone:{"\u00A0\u00A0\u00A0\u00A0\u00A0"}
-                    <input
-                        className={styles.input}
-                        type="text"
-                        value={contact.phone}
-                        name="phone"
-                        onChange={handleChange} />
-                </label>
-                <br />
-                <label>
-                        E-mail:{"\u00A0\u00A0\u00A0\u00A0\u00A0"}
-                    <input
-                        className={styles.input}
-                         type="email"
-                        value={contact.email}
-                        name="email"
-                        onChange={handleChange} />
-                </label>
-                <br />
-                <label>
-                        Street:{"\u00A0\u00A0\u00A0\u00A0\u00A0"}
-                    <input
-                        className={styles.input}
-                        type="text"
-                        value={contact.address}
-                        name="address"
-                        onChange={handleChange} />
-                </label>
-                <br />
-                <button className={styles.abutton} onClick={() => handleSubmit}>Add</button>
-            </form>
+                <form className={styles.inputform} onSubmit={handleSubmit}>
+                    <label className={styles.field}>
+                            Name:{"\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"}
+                        <input
+                            className={styles.input}
+                            type="text"
+                            value={contact.name}
+                            name="name"
+                            onChange={handleChange} />
+                    </label>
+                    <br />
+                    <label>
+                            Phone:{"\u00A0\u00A0\u00A0\u00A0\u00A0"}
+                        <input
+                            className={styles.input}
+                            type="text"
+                            value={contact.phone}
+                            name="phone"
+                            onChange={handleChange} />
+                    </label>
+                    <br />
+                    <label>
+                            E-mail:{"\u00A0\u00A0\u00A0\u00A0\u00A0"}
+                        <input
+                            className={styles.input}
+                            type="email"
+                            value={contact.email}
+                            name="email"
+                            onChange={handleChange} />
+                    </label>
+                    <br />
+                    <label>
+                            Street:{"\u00A0\u00A0\u00A0\u00A0\u00A0"}
+                        <input
+                            className={styles.input}
+                            type="text"
+                            value={contact.address}
+                            name="address"
+                            onChange={handleChange} />
+                    </label>
+                    <br />
+                    <button className={styles.abutton} type="submit">Add</button>
+                </form>
             </div>
         </>
     );

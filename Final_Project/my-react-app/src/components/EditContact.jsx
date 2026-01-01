@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from '../styles/AddContact.module.css'
 import { Link, useParams, useNavigate } from "react-router-dom";
+import NotFound from "../pages/NotFound";
 
 
 function EditContact({ contacts, editContact }) {
@@ -33,7 +34,9 @@ function EditContact({ contacts, editContact }) {
         });
         navigate("/contactList")
     };
-
+    if(!contactToUpdate) {
+        return <NotFound />
+    }
 
     return (
         <>
@@ -81,8 +84,8 @@ function EditContact({ contacts, editContact }) {
                 </label>
                 <br />
                     <button className={styles.abutton} type="submit" >Save</button>
-                    <Link to="/contactList">
-                        <button className={styles.abutton}>Exit</button>
+                <Link className={styles.abutton} to="/contactList">
+                        Exit
                 </Link>
 
             </form>

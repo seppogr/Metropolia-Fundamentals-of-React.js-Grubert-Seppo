@@ -1,10 +1,13 @@
 .abutton {
-    font-size: small;
-    margin-top: 12px;
     color: white;
+    margin-top: 12px;
     background-color: #2f9e63;
     margin-right: 15px;
-    height: auto;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 5px 5px;
+    font-size: 1em;
+
 }
 
 .abutton:hover {
@@ -12,19 +15,10 @@
     background-color: #52af7d;
 }
 
-.dbutton {
 
-    font-size: small;
-    margin-top: 23px;
+
+a {
     color: white;
-    background-color: #2f9e63;
-    margin-right: 15px;
-    height: 37px;
-}
-
-.dbutton:hover {
-    transform: translateY(+1px);
-    background-color: #52af7d;
 }
 
 ul {

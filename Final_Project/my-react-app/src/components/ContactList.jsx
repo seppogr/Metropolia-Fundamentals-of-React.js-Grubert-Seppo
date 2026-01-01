@@ -19,11 +19,11 @@ function ContactList( {contacts, deleteContact} ) {
                            {singleContact.name} <br />Phone: {singleContact.phone}
 
                     </Link>
-                        <Link to={`/edit/${singleContact.id}`}>
-                            <button className={styles.abutton}>Edit</button>
+                        <Link className={styles.abutton} style={{ color: "white" }} to={`/edit/${singleContact.id}`}>
+                            Edit
                     </Link>
 
-                            <button className={styles.dbutton} onClick={() => deleteContact(singleContact)} >Delete</button>
+                            <button className={styles.abutton} onClick={() => deleteContact(singleContact)} >Delete</button>
                     </li>
                 ))}
 
