@@ -3,9 +3,26 @@
     margin-top: 12px;
     color: white;
     background-color: #2f9e63;
+    margin-right: 15px;
+    height: auto;
 }
 
 .abutton:hover {
+    transform: translateY(+1px);
+    background-color: #52af7d;
+}
+
+.dbutton {
+
+    font-size: small;
+    margin-top: 23px;
+    color: white;
+    background-color: #2f9e63;
+    margin-right: 15px;
+    height: 37px;
+}
+
+.dbutton:hover {
     transform: translateY(+1px);
     background-color: #52af7d;
 }
@@ -17,7 +34,7 @@ ul {
 }
 
 .contactslist {
-    width: 325px;
+    width: 500px;
     margin-left: auto;
     margin-right: auto;
     background-color: #1f6f45;
@@ -61,5 +78,4 @@ ul {
     background: #ffffff;
     color: #0f1f12;
     outline: none;
-
 }

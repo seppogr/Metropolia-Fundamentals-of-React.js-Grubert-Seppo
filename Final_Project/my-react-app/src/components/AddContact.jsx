@@ -22,7 +22,6 @@ function AddContact({ addContact }) {
 
         const contactToAdd = { ...contact, id: Date.now().toString()}
         addContact(contactToAdd);
-        alert(`${contactToAdd.name} added to contacts list.`)
 
         setContact({
             id: "",
@@ -35,11 +34,11 @@ function AddContact({ addContact }) {
 
     return (
         <>
-            <div style={{ width: "325px", color: "white", backgroundColor: "#1f6f45", marginLeft: "auto", marginRight: "auto", borderRadius: "16px", padding: "24px" }}>
+            <div style={{ width: "500px", color: "white", backgroundColor: "#1f6f45", marginLeft: "auto", marginRight: "auto", borderRadius: "16px", padding: "24px" }}>
             <form className={styles.inputform} onSubmit={handleSubmit}>
                 <h2>Enter Your Contact's Details Here:</h2>
                 <label className={styles.field}>
-                    Name:{"\u00A0\u00A0\u00A0\u00A0\u00A0"}
+                        Name:{"\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"}
                     <input
                         className={styles.input}
                         type="text"
@@ -49,7 +48,7 @@ function AddContact({ addContact }) {
                 </label>
                 <br />
                 <label>
-                    Phone:{"\u00A0\u00A0\u00A0\u00A0"}
+                        Phone:{"\u00A0\u00A0\u00A0\u00A0\u00A0"}
                     <input
                         className={styles.input}
                         type="text"
@@ -59,7 +58,7 @@ function AddContact({ addContact }) {
                 </label>
                 <br />
                 <label>
-                    E-mail:{"\u00A0\u00A0\u00A0\u00A0"}
+                        E-mail:{"\u00A0\u00A0\u00A0\u00A0\u00A0"}
                     <input
                         className={styles.input}
                          type="email"
@@ -69,7 +68,7 @@ function AddContact({ addContact }) {
                 </label>
                 <br />
                 <label>
-                    Address:{"\u00A0"}
+                        Street:{"\u00A0\u00A0\u00A0\u00A0\u00A0"}
                     <input
                         className={styles.input}
                         type="text"

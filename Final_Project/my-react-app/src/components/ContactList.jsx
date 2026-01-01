@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 
 
-function ContactList( {contacts} ) {
+function ContactList( {contacts, deleteContact} ) {
 
     return (
         <>
         <div className={styles.contactslist}>
-            <div className={styles.listheading}><h2>Your List of Contacts:</h2></div>
+            <div className={styles.listheading}><h2>Your Contacts:</h2></div>
 
             <ul>
                 {contacts.map((singleContact) => (
@@ -22,14 +22,9 @@ function ContactList( {contacts} ) {
                         <Link to={`/edit/${singleContact.id}`}>
                             <button className={styles.abutton}>Edit</button>
                     </Link>
-                    <Link to={"/"}>
-                            <button className={styles.abutton}>Delete</button>
-                    </Link>
 
-
+                            <button className={styles.dbutton} onClick={() => deleteContact(singleContact)} >Delete</button>
                     </li>
-
-
                 ))}
 
             </ul>

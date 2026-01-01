@@ -23,14 +23,14 @@ function App() {
   };
 
   const editContact = (updatedContact) => {
-    setContacts(prev =>
-      prev.map (contact =>
+    setContacts(contacts =>
+      contacts.map(contact =>
         contact.id === updatedContact.id ? updatedContact : contact));
-
-
   };
 
-
+  const deleteContact = (contactToDelete) => {
+    setContacts(contacts => contacts.filter(contact => contact.id !== contactToDelete.id));
+  };
 
       return (
         <>
@@ -38,14 +38,12 @@ function App() {
             <Navbar />
             <div style={{ padding: '20px' }}>
               <Routes>
-
-                <Route path="/" element={<Home  />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/addContact" element={<AddContact addContact={addContact} />} />
-                <Route path="/contactList" element={<ContactList contacts={contacts} />} />
+                <Route path="/contactList" element={<ContactList contacts={contacts} deleteContact={deleteContact}/>} />
                 <Route path="/contacts/:id" element={<ContactDetails contacts={contacts} />} />
                 <Route path="/edit/:id" element={<EditContact contacts={contacts} editContact={editContact} />} />
                 <Route path="*" element={<NotFound />} />
-
               </Routes>
             </div>
           </Router>
